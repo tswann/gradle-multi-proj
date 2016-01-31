@@ -1,12 +1,21 @@
 allprojects {
 	apply plugin: 'java'
-//	apply plugin: 'application'
 	apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.assertj:assertj-core:3.3.0'
+    }
 }
 
 version = '1.0.SNAPSHOT'
 
-project(':logic'){}
+project(':logic'){
+}
 
 project(':repository'){
 	dependencies {
@@ -17,5 +26,3 @@ project(':repository'){
 task wrapper (type: Wrapper) {
 	gradleVersion = '2.3'
 }
-
-//mainClassName = 'com.pluralsight.gradle.Application'
